@@ -3,18 +3,17 @@ package thumb_gen
 import (
 	"errors"
 	"fmt"
-	"log"
 	"os/exec"
 )
 
-func main() {
+func Installed() bool {
 	path, err := exec.LookPath("ffmpeg")
 	if errors.Is(err, exec.ErrDot) {
 		err = nil
 	}
 	if err != nil {
-		log.Fatal(err)
+		return false
 	}
 	fmt.Println(path)
-	//use(path)
+	return true
 }
