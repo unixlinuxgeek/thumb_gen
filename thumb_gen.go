@@ -8,7 +8,6 @@ import (
 	"os/exec"
 )
 
-// ffmpeg -ss 01:23:45 -i input -frames:v 1 -q:v 2 output.jpg
 func Gen(vidName string, outImg, time string) error {
 	f, err := os.OpenFile(vidName, os.O_APPEND|os.O_WRONLY|os.O_CREATE, 777)
 	err = f.Close()
