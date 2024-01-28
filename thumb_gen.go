@@ -15,7 +15,7 @@ func Gen(vidName string, outImg, time string) error {
 		log.Fatal(err)
 	}
 
-	app := "ffmpeg"
+	app := "./bin/ffmpeg-amd64-static/ffmpeg"
 	arg1 := "-y"
 	arg2 := "-i"
 	arg3 := vidName
