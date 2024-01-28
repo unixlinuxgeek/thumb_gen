@@ -9,7 +9,7 @@ import (
 )
 
 func Gen(vidName string, outImg, time string) error {
-	f, err := os.OpenFile(vidName, os.O_APPEND|os.O_WRONLY|os.O_CREATE, 777)
+	f, err := os.OpenFile(vidName, os.O_APPEND|os.O_WRONLY|os.O_CREATE, 755)
 	err = f.Close()
 	if err != nil {
 		log.Fatal(err)
