@@ -17,13 +17,15 @@ func Gen(vidName string, outImg, time string) error {
 
 	app := "./bin/ffmpeg-amd64-static/ffmpeg"
 	arg1 := "-y"
-	arg2 := "-i"
-	arg3 := vidName
-	arg4 := "-frames:v"
-	arg5 := "1"
-	arg6 := outImg
+	arg2 := "-ss"
+	arg3 := time
+	arg4 := "-i"
+	arg5 := vidName
+	arg6 := "-frames:v"
+	arg7 := "1"
+	arg8 := outImg
 
-	cmd := exec.Command(app, arg1, arg2, arg3, arg4, arg5, arg6)
+	cmd := exec.Command(app, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8)
 	err = cmd.Run()
 	if err != nil {
 		return err
